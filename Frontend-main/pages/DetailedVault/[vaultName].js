@@ -36,10 +36,10 @@ export default function DetailedVault() {
                         <span className="text-[#B4B4B4] text-[12px]">$ 0.00</span>
                     </div>
                 </div>
-                <div className="flex w-full justify-center mt-10">
+                <div className="flex w-full justify-center mt-12">
                     <div className="flex w-1/4 space-x-[100px]">
-                        <button className='text-[20px] bg-[#42EACA] rounded-full font-bold px-10 flex items-center text-center py-5'><BsArrowUpCircleFill className='text-[20px] mr-1' />Deposite</button>
-                        <button className='text-[20px] bg-[#F0B90B] rounded-full font-bold px-10 flex items-center text-center py-5'><BsArrowDownCircleFill className='text-[20px] mr-1' />Withdraw</button>
+                        <button className='text-[20px] bg-[#42EACA] rounded-xl font-bold px-10 flex items-center text-center py-5'><BsArrowUpCircleFill className='text-[20px] mr-1' />Deposit</button>
+                        <button className='text-[20px] bg-[#F0B90B] rounded-xl font-bold px-10 flex items-center text-center py-5'><BsArrowDownCircleFill className='text-[20px] mr-1' />Withdraw</button>
                     </div>
                 </div>
                 <Tab />
