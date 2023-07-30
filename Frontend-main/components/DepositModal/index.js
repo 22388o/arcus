@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import React from "react";
+import { useState } from "react"; 
+
 
 export default function DepositModal({ isOpen, onClose, vaultName }) {
-  const [amount, setAmount] = useState('');
+  const [amount, setAmount] = useState("");
 
   if (!isOpen) {
     return null;
@@ -11,8 +13,7 @@ export default function DepositModal({ isOpen, onClose, vaultName }) {
     <div className="fixed z-10 inset-0 overflow-y-auto">
       <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
         <div className="fixed inset-0 transition-opacity" aria-hidden="true">
-          <div className="absolute inset-0 bg-gray-500 opacity-75">
-          </div>
+          <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
         </div>
 
         <div
@@ -27,52 +28,53 @@ export default function DepositModal({ isOpen, onClose, vaultName }) {
               id="modal-headline"
             >
               {vaultName}
-            </span> 
+            </span>
           </div>
-        {/* <hr className='border-t-2 border-[#555555] mt-3' />  */}
-        <div className='flex flex-col px-4 mt-4'>  
-          <div className='border-2 border-gray-500 p-3 rounded-lg'>
-            <span className='font-bold font-exo2'>Deposit</span>        
-            <div className="mt-2 flex px-2">
-              <span className="text-sm text-gray-500 font-bold text-[24px] mr-auto my-auto">
-                sBTC
-              </span>
-              <div className='flex flex-col'>
-                <input
-                  className="rounded-md w-[100px] focus:border-none focus:outline-none text-[20px]"
-                  value={amount}
-                  onChange={e => setAmount(e.target.value)}
-                />
-                <hr className='-ml-1 border-t-2 border-black' />
-              </div>
-            </div>
-          </div>
-
-          <div className='border-2 border-gray-500 p-3 rounded-lg mt-3'>
-            <span className='font-bold font-exo2'>Receive</span>        
-            <div className="mt-2 flex px-2">
-              <span className="text-sm text-gray-500 font-bold text-[24px] mr-auto my-auto">
-                vBTC
-              </span>
-              <div className='flex flex-col'>
-                <span
-                  className="font-bold font-exo2 w-[100px] text-[20px]">
-                    10.01
+          
+          {/* <hr className='border-t-2 border-[#555555] mt-3' />  */}
+          <div className="flex flex-col px-4 mt-4">
+            <div className="border-2 border-gray-500 p-3 rounded-lg">
+              <span className="font-bold font-exo2">Deposit</span>
+              <div className="mt-2 flex px-2">
+                <span className="text-sm text-gray-500 font-bold text-[24px] mr-auto my-auto">
+                  sBTC
                 </span>
+                <div className="flex flex-col">
+                  <input
+                    className="rounded-md w-[100px] focus:border-none focus:outline-none text-[20px]"
+                    value={amount}
+                    onChange={(e) => setAmount(e.target.value)}
+                  />
+                  <hr className="-ml-1 border-t-2 border-black" />
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className='border-2 border-gray-500 p-3 rounded-lg mt-3 flex flex-col'>     
-              <div className='flex px-2'>
+                                    
+            <div className="border-2 border-gray-500 p-3 rounded-lg mt-3">
+              <span className="font-bold font-exo2">Receive</span>
+              <div className="mt-2 flex px-2">
+                <span className="text-sm text-gray-500 font-bold text-[24px] mr-auto my-auto">
+                  vBTC
+                </span>
+                <div className="flex flex-col">
+                  <span className="font-bold font-exo2 w-[100px] text-[20px]">
+                    10.01
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="border-2 border-gray-500 p-3 rounded-lg mt-3 flex flex-col">
+              <div className="flex px-2">
                 <span className="text-sm font-bold text-[24px] mr-auto my-auto w-fit">
                   Exchange Rate
                 </span>
                 <span className="font-bold font-exo2 w-fit text-[20px] ml-auto">
-                    1 vBTC = 0.004 BTC
+                  1 vBTC = 0.004 BTC
                 </span>
               </div>
-              <div className='flex px-2'>
+              <div className="flex px-2">
                 <span className="text-sm font-bold text-[24px] mr-auto my-auto w-fit">
                   Share of Pool
                 </span>
@@ -80,9 +82,9 @@ export default function DepositModal({ isOpen, onClose, vaultName }) {
                   0.024 %
                 </span>
               </div>
+            </div>
           </div>
-          </div>
-        
+
           <div className="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
             <button
               type="button"
@@ -91,6 +93,7 @@ export default function DepositModal({ isOpen, onClose, vaultName }) {
             >
               Confirm
             </button>
+
             <button
               type="button"
               className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:w-auto sm:text-sm"
@@ -100,7 +103,7 @@ export default function DepositModal({ isOpen, onClose, vaultName }) {
             </button>
           </div>
         </div>
-      </div>  
+      </div>
     </div>
   );
 }

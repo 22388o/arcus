@@ -38,6 +38,7 @@ export default function Vaults() {
                 Home
               </span>
             </div>
+
             <div
               className="p-3 bg-transparent hover:bg-[#1E1E1E] flex rounded-lg w-[200px] hover:cursor-pointer"
               onClick={() => router.push("./Vaults")}
@@ -47,6 +48,7 @@ export default function Vaults() {
                 Vaults
               </span>
             </div>
+
             <div
               className="p-3 bg-transparent hover:bg-[#1E1E1E] flex rounded-lg w-[200px] hover:cursor-pointer"
               onClick={() => router.push("./About")}
@@ -57,6 +59,7 @@ export default function Vaults() {
               </span>
             </div>
           </div>
+
           <div className="w-[2px] h-full bg-[#2C2C2C]"></div>
           <div className="flex flex-col w-full h-full items-center px-4 pb-10">
             <div className="w-[1200px] p-[10px] mt-[50px] bg-[#1E1E1E] rounded-lg items-center flex space-x-6 justify-between px-[150px]">
@@ -74,6 +77,7 @@ export default function Vaults() {
                     <span className="text-white font-exo2 text-[14px] text-center">0 BTC</span>
                 </div>
             </div>
+            
             <div className="w-[1200px] h-full py-[40px] mt-[50px] bg-[#1E1E1E] rounded-lg flex px-[50px]">
                 <span className="text-white font-exo2 text-[24px] font-bold">Vaults</span>
                 <div className="pl-[20px] items-center flex justify-between">
@@ -82,6 +86,7 @@ export default function Vaults() {
             </div>
           </div>
         </div>
+
         <hr className="border-t-2 border-[#2C2C2C]" />
         <div className="flex mt-auto">
           <Footer className="h-[80px]" />

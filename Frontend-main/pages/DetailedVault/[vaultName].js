@@ -57,12 +57,14 @@ export default function DetailedVault() {
                         <span className="text-[#B4B4B4] text-[12px]">$ 0.00</span>
                     </div>
                 </div>
+
                 <div className="flex w-full justify-center mt-12">
                     <div className="flex w-1/4 space-x-[100px]">
                         <button className='text-[20px] bg-[#42EACA] rounded-xl font-bold px-10 flex items-center text-center py-5' onClick={handleOpenDeposit}>
                             <BsArrowUpCircleFill className='text-[20px] mr-1' />
                             Deposit
                         </button>
+
                         {
                             isDepositModal && 
                             <DepositModal isOpen={isDepositModal} onClose={handleCloseDeposit} vaultName={'BTC Vault - Deposit'} ></DepositModal>

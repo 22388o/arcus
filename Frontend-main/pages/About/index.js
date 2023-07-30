@@ -6,6 +6,7 @@ import { FcAbout } from "react-icons/fc";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import Image from "next/image";
+import AddToVault from "@/components/AddToVault";
 
 export default function About() {
   const router = useRouter();
@@ -53,6 +54,7 @@ export default function About() {
               height={120}
               alt="arcus png"
             />
+                        <AddToVault />
             <div className="mt-[50px] w-[1000px] h-[500px] bg-[#1E1E1E] rounded-lg items-center justify-center flex flex-col">
 
                 <a href="http://arcusbtc.com/" className="text-[36px] font-medium text-blue-600 dark:text-blue-500 hover:underline">
