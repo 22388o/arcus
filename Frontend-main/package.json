@@ -9,8 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@headlessui/react": "^1.7.16",
+    "@mui/material": "^5.14.1",
     "@stacks/connect": "^7.3.1",
     "@stacks/connect-react": "^22.1.1",
+    "axios": "^1.4.0",
     "chart.js": "^4.3.0",
     "chartjs-adapter-date-fns": "^3.0.0",
     "chartjs-adapter-moment": "^1.0.1",
@@ -22,6 +27,7 @@
     "react-chartjs-2": "^5.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.10.1",
+    "recharts": "^2.7.2",
     "yarn": "^1.22.19"
   },
   "devDependencies": {

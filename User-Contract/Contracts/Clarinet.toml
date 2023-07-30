@@ -1,27 +1,22 @@
 [project]
-name = 'Contracts'
+name = 'test-contracts'
 description = ''
 authors = []
 telemetry = true
 cache_dir = '.\.cache'
 requirements = []
-[contracts.Sip-10]
-path = 'contracts/Sip-10.clar'
+[contracts.arcus-vault]
+path = 'contracts/arcus-vault.clar'
 clarity_version = 2
 epoch = 2.1
 
-[contracts.arcus-swap]
-path = 'contracts/arcus-swap.clar'
+[contracts.lp-token]
+path = 'contracts/lp-token.clar'
 clarity_version = 2
 epoch = 2.1
 
-[contracts.arcus-token]
-path = 'contracts/arcus-token.clar'
-clarity_version = 2
-epoch = 2.1
-
-[contracts.satosh-token]
-path = 'contracts/satosh-token.clar'
+[contracts.sip-010-trait]
+path = 'contracts/sip-010-trait.clar'
 clarity_version = 2
 epoch = 2.1
 [repl.analysis]

@@ -1,8 +1,10 @@
-;; SIP-10
-;; Implementing SIP-10 locally so I can work with FTs correctly
-;;  Written by David-Jesse
+;; Sip-010 traits
+;; Written by David-Jesse
 
-(define-trait ft-trait 
+;; SIP-10
+
+(define-trait sip-10-trait
+
     (
         ;; Transfer from principal to principal
         (transfer (uint principal principal (optional (buff 34))) (response bool uint))
@@ -23,8 +25,10 @@
         (get-total-supply () (response uint uint))
 
         ;; Optional URI for metadata
-        (get-token-uri () (response (optional (string-ascii 356)) uint))
-        
+        (get-token-uri () (response (optional (string-utf8 256)) uint))
+
+        ;; Helper functions
+        (mint (uint principal) (response bool uint))
+        (burn (uint principal) (response bool uint))
     )
 )
-

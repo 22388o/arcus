@@ -6,11 +6,16 @@ import { useReducer } from "react";
 import useHiro from "../../hooks/useHiro";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md"
 import { LuWallet } from "react-icons/lu"
+import { useRouter } from 'next/router';
 
 export default function Header() {
     const [ignored, reload] = useReducer(x => x + 1, 0);
     const { authenticate } = useConnect();
     const address = useHiro();
+    const router = useRouter('');
+    const imageClickHandle = () => {
+      router.push('../')
+    }
 
     const authOptions = {
         appDetails: {
@@ -26,7 +31,7 @@ export default function Header() {
     return (
       <div className="p-[12px] flex w-full h-[80px] items-center bg-black">
         <div className="w-[90px] h-[60px] flex ml-3">
-          <Image src='/Arcus_logo.png' width={50} height={50} alt="logo" />
+          <Image src='/Arcus_logo.png' width={50} height={50} alt="logo" onClick={imageClickHandle} className='hover:cursor-pointer'/>
         </div>
         <div className="w-full flex items-center">
           { 

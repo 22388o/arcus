@@ -54,9 +54,14 @@ export default function About() {
               alt="arcus png"
             />
             <div className="mt-[50px] w-[1000px] h-[500px] bg-[#1E1E1E] rounded-lg items-center justify-center flex flex-col">
+
+                <a href="http://arcusbtc.com/" className="text-[36px] font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                Learn more!</a>
+                <br />          <br />
               <span className="text-[#FFFFFF] font-Exo2 text-[30px] text-center">
                 Unlock Bitcoin DeFi, by partneting with the Arcus Bitcoin vault.
               </span>
+    
               <span className="mt-12 text-[#BBBBBB] font-Exo2 text-[24px] text-center">
                 Arcus allows BTC holders to keep control of their BTC, while
                 providing access to the latest alpha available on the crypto
