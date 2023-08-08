@@ -1,3 +1,5 @@
+// Sign Up Modal for Early Access - Opens when User clicks 'Sign Up'
+
 import { useState } from 'react';
 
 export default function SignUpModal({ isOpen, onClose }) {

@@ -1,3 +1,5 @@
+// Sendgrid Early Access Signup Email Send
+
 import React, { useState, useRef } from "react";
 
 export default function sendMailButton() {

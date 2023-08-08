@@ -1,3 +1,5 @@
+// Lending Table for Lend N' Borrow
+
 import React from "react";
 import { PiVaultLight } from "react-icons/pi";
 import { BsCoin } from "react-icons/bs";
@@ -9,7 +11,7 @@ import { BsArrowDownCircleFill } from "react-icons/bs";
 import { BsArrowUpCircleFill } from "react-icons/bs";
 import { useRouter } from "next/router";
 
-export default function TransactionTable() {
+export default function LendingTable() {
   const router = useRouter();
   return (
     <div className="flex flex-col mt-3">
@@ -19,15 +21,6 @@ export default function TransactionTable() {
             <table className="min-w-full divide-y divide-[#2C2C2C]">
               <thead className="bg-transparent">
                 <tr>
-                  <th
-                    scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-[#B4B4B4] tracking-wider"
-                  >
-                    <div className="flex space-x-1 items-center">
-                      <PiVaultLight className="text-white text-[20px]" />
-                      <span>Vault Name</span>
-                    </div>
-                  </th>
                   <th
                     scope="col"
                     className="px-6 py-3 text-left text-xs font-medium text-[#B4B4B4] tracking-wider"
@@ -77,24 +70,13 @@ export default function TransactionTable() {
               </thead>
               <tbody className="">
                 <tr>
-                  <td className="px-4 py-2">
-                    <div
-                      className="flex items-center hover:bg-[#111111] hover:cursor-pointer hover:rounded-lg px-2 py-2"
-                      onClick={() => router.push("/DetailedVault/BTC")}
-                    >
-                      <span className="text-[15px] text-white ml-2">
-                        {" "}
-                        BTC Vault
-                      </span>
-                    </div>
-                  </td>
                   <td className="px-6 py-4 ">
-                    <span className="text-[15px] text-white"> vBTC</span>
+                    <span className="text-[15px] text-white"> BTC</span>
                   </td>
                   <td className="px-6 py-4">
                     <div className="flex items-center">
                       <span className="text-[15px] text-white text-center">
-                        10.3%
+                        5.3%
                       </span>
                     </div>
                   </td>
@@ -102,7 +84,7 @@ export default function TransactionTable() {
                     <div className="flex items-center">
                       <span className="text-[15px] text-white">
                         {" "}
-                        $ 1,054,261
+                        $ 4,055,124
                       </span>
                     </div>
                   </td>
@@ -114,10 +96,10 @@ export default function TransactionTable() {
                   <td className="px-6 py-4">
                     <div className="flex flex-col text-white">
                       <span className="text-[15px] text-[#F0B90B]">
-                        0.000671 BTC
+                        1.0449 BTC
                       </span>
                       <span className="text-[12px] text-[#42EACA]">
-                        53.7 ABR
+                        3.7 ABR
                       </span>
                     </div>
                   </td>
@@ -135,24 +117,13 @@ export default function TransactionTable() {
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-2">
-                    <div
-                      className="flex items-center justify hover:bg-[#111111] hover:cursor-pointer px-2 py-2 rounded-lg"
-                      onClick={() => router.push("/DetailedVault/BTC")}
-                    >
-                      <span className="text-[15px] text-white ml-2">
-                        {" "}
-                        Stable Vault
-                      </span>
-                    </div>
-                  </td>
                   <td className="px-6 py-4 ">
-                    <span className="text-[15px] text-white"> vsUSDT</span>
+                    <span className="text-[15px] text-white"> sUSDT</span>
                   </td>
                   <td className="px-6 py-4">
                     <div className="flex items-center">
                       <span className="text-[15px] text-white text-center">
-                        5.6%
+                        2.6%
                       </span>
                     </div>
                   </td>
@@ -160,22 +131,25 @@ export default function TransactionTable() {
                     <div className="flex items-center">
                       <span className="text-[15px] text-white">
                         {" "}
-                        $ 3,413,040
+                        $ 2,311,250
                       </span>
                     </div>
                   </td>
                   <td className="px-6 py-4">
                     <div className="flex items-center">
-                      <span className="text-[15px] text-white"> 1.29 BTC</span>
+                      <span className="text-[15px] text-white">
+                        {" "}
+                        0.000219 BTC
+                      </span>
                     </div>
                   </td>
                   <td className="px-6 py-4">
                     <div className="flex flex-col text-white">
                       <span className="text-[15px] text-[#F0B90B]">
-                        0.00748 BTC
+                        0.0000061 BTC
                       </span>
                       <span className="text-[12px] text-[#42EACA]">
-                        31.79 ABR
+                        14.127 ABR
                       </span>
                     </div>
                   </td>
@@ -192,25 +166,15 @@ export default function TransactionTable() {
                     </div>
                   </td>
                 </tr>
+
                 <tr>
-                  <td className="px-4 py-2">
-                    <div
-                      className="flex items-center px-2 py-2 rounded-lg hover:bg-[#111111] hover:cursor-pointer"
-                      onClick={() => router.push("/DetailedVault/BTC")}
-                    >
-                      <span className="text-[15px] text-white ml-2">
-                        {" "}
-                        Arcus Bitcoin Rewards Vault
-                      </span>
-                    </div>
-                  </td>
                   <td className="px-6 py-4 ">
-                    <span className="text-[15px] text-white"> vABR</span>
+                    <span className="text-[15px] text-white">ALEX</span>
                   </td>
                   <td className="px-6 py-4">
                     <div className="flex items-center">
                       <span className="text-[15px] text-white text-center">
-                        47.3%
+                        2.3%
                       </span>
                     </div>
                   </td>
@@ -227,10 +191,55 @@ export default function TransactionTable() {
                   <td className="px-6 py-4">
                     <div className="flex flex-col text-white">
                       <span className="text-[15px] text-[#F0B90B]">
-                        0.000374 BTC
+                        0.04859 BTC
                       </span>
                       <span className="text-[12px] text-[#42EACA]">
-                        11.7 ABR
+                        37.2 ABR
+                      </span>
+                    </div>
+                  </td>
+                  <td className="px-2 py-4">
+                    <div className="flex flex-col">
+                      <button className="text-[15px] bg-[#42EACA] rounded-full font-bold px-2 flex items-center">
+                        <BsArrowUpCircleFill className="text-[15px] mr-1" />
+                        Deposit
+                      </button>
+                      <button className="text-[15px] bg-[#F0B90B] rounded-full font-bold mt-2 px-2 flex items-center">
+                        <BsArrowDownCircleFill className="text-[15px] mr-1" />
+                        Withdraw
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td className="px-6 py-4 ">
+                    <span className="text-[15px] text-white"> ABR</span>
+                  </td>
+                  <td className="px-6 py-4">
+                    <div className="flex items-center">
+                      <span className="text-[15px] text-white text-center">
+                        7.3%
+                      </span>
+                    </div>
+                  </td>
+                  <td className="px-5 py-4">
+                    <div className="flex items-center">
+                      <span className="text-[15px] text-white"> $ 621,898</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4">
+                    <div className="flex items-center">
+                      <span className="text-[15px] text-white"> 0.05 BTC</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4">
+                    <div className="flex flex-col text-white">
+                      <span className="text-[15px] text-[#F0B90B]">
+                        0.01451 BTC
+                      </span>
+                      <span className="text-[12px] text-[#42EACA]">
+                        21.9 ABR
                       </span>
                     </div>
                   </td>

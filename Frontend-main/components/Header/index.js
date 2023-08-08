@@ -1,3 +1,5 @@
+// Navbar w/ Logo and Connect Wallet
+
 import Image from 'next/image'
 import _ from 'lodash'
 import { useConnect } from "@stacks/connect-react"
@@ -7,8 +9,11 @@ import useHiro from "../../hooks/useHiro";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md"
 import { LuWallet } from "react-icons/lu"
 import { useRouter } from 'next/router';
+import { setStxAddress_testnet } from '@/collectionSlice';
+import { useSelector, useDispatch } from "react-redux";
 
 export default function Header() {
+  const dispatch = useDispatch();
     const [ignored, reload] = useReducer(x => x + 1, 0);
     const { authenticate } = useConnect();
     const address = useHiro();
@@ -24,7 +29,9 @@ export default function Header() {
         },
         redirectTo: '/',
         onFinish: () => {
-        reload();
+          const hiroAddress_testnet = userSession.loadUserData().profile?.stxAddress?.testnet;
+          dispatch(setStxAddress_testnet(hiroAddress_testnet));
+          reload();
         },
         userSession
     };

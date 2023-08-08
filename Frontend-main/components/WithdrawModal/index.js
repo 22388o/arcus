@@ -1,3 +1,5 @@
+// Withdraw Modal when User clicks 'Deposit' Button
+
 import { useState } from 'react';
 
 export default function WithdrawModal({ isOpen, onClose, vaultName }) {

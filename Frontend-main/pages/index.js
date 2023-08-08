@@ -29,6 +29,16 @@ export default function Home() {
                 Home
               </span>
             </div>
+
+            <div
+              className="p-3 bg-transparent hover:bg-[#1E1E1E] flex rounded-lg w-[200px] hover:cursor-pointer"
+              onClick={() => router.push("./Lendnborrow")}
+            >
+              <PiVaultLight className="text-white text-[20px]" />
+              <span className="text-white font-Exo2 text-[14px] ml-3">
+                Lend N' Borrow
+              </span>
+            </div>
             <div
               className="p-3 bg-transparent hover:bg-[#1E1E1E] flex rounded-lg w-[200px] hover:cursor-pointer"
               onClick={() => router.push("./Vaults")}
@@ -40,13 +50,14 @@ export default function Home() {
             </div>
             <div
               className="p-3 bg-transparent hover:bg-[#1E1E1E] flex rounded-lg w-[200px] hover:cursor-pointer"
-              onClick={() => router.push("./About")}
+              onClick={() => router.push("http://arcusbtc.com")}
             >
               <FcAbout className="text-white text-[20px]" />
               <span className="text-white font-Exo2 text-[14px] ml-3">
                 About
               </span>
             </div>
+
           </div>
           <div className="w-[2px] h-full bg-[#2C2C2C]"></div>
           {status == 2 && (
@@ -89,7 +100,10 @@ export default function Home() {
                   <span className="text-white text-[24px] font-bold mt-[100px]">
                     Yield Vaults
                   </span>
-                  <button className="bg-[#42EACA] mt-5 rounded-[5px] w-[220px] text-center justify-center px-6 py-4 h-[60px] flex items-center ml-auto text-[24px] font-exo2 font-bold" onClick={() => router.push("/Vaults")}>
+                  <button
+                    className="bg-[#42EACA] mt-5 rounded-[5px] w-[220px] text-center justify-center px-6 py-4 h-[60px] flex items-center ml-auto text-[24px] font-exo2 font-bold"
+                    onClick={() => router.push("/Vaults")}
+                  >
                     <MdPageview className="mr-2" />
                     Explore
                   </button>

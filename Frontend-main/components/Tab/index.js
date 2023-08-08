@@ -1,3 +1,5 @@
+// Tab Functionality on Vault Details
+
 import { useState } from 'react';
 import Tab_About from '../Tab_About';
 import Tab_Stratigies from '../Tab_Stratigies';

@@ -1,5 +1,8 @@
+// Deposit Modal when User clicks 'Deposit' Button
+
 import React from "react";
-import { useState } from "react"; 
+import { useState } from "react";
+import { runClarityFunction } from "@/utils/stacks";
 
 
 export default function DepositModal({ isOpen, onClose, vaultName }) {
@@ -89,7 +92,7 @@ export default function DepositModal({ isOpen, onClose, vaultName }) {
             <button
               type="button"
               className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:ml-3 sm:w-auto sm:text-sm"
-              onClick={onClose}
+              onClick={() => {runClarityFunction('ST39KDG85WZ340RAGGFY4FN3JMKYMEC1AEQHRM7TN', 'arcus-vaults', 'deposit-vault-stx', amount, 0)}}
             >
               Confirm
             </button>

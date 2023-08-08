@@ -4,23 +4,28 @@ import { AiOutlineHome } from "react-icons/ai";
 import { PiVaultLight } from "react-icons/pi";
 import { FcAbout } from "react-icons/fc";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import TransactionTable from "@/components/TransactionTable";
 
 export default function Vaults() {
+  const stxTestnetAddress = useSelector((state) => state.arcusInfo.stxAddress_testnet);
+  console.log('stxTestnetAddress', stxTestnetAddress);
   const router = useRouter();
-  const [status, setStatus] = useState(1);
   const [accountSTX, setAccountSTX] = useState(0);
 
 
-  // fix this function
   const getSTXBalance = async () =>{
-    let STXBalance = await axios.get('https://api.testnet.hiro.so/extended/v1/address/ST10M9SK9RE5Z919TYVVMTZF9D8E0D6V8GR11BPA5/stx')
+    let STXBalance = await axios.get(`https://api.testnet.hiro.so/extended/v1/address/${stxTestnetAddress}/stx`)
     console.log(STXBalance);
     setAccountSTX(STXBalance.data.balance);
   }
-  getSTXBalance();
+  useEffect(() => {
+    if(stxTestnetAddress) {
+      getSTXBalance();  
+    }
+  }, [stxTestnetAddress]);
 
   return (
     <div className="bg-black w-full h-screen flex flex-col">
@@ -41,6 +46,16 @@ export default function Vaults() {
 
             <div
               className="p-3 bg-transparent hover:bg-[#1E1E1E] flex rounded-lg w-[200px] hover:cursor-pointer"
+              onClick={() => router.push("./Lendnborrow")}
+            >
+              <PiVaultLight className="text-white text-[20px]" />
+              <span className="text-white font-Exo2 text-[14px] ml-3">
+                Lend N' Borrow
+              </span>
+            </div>
+
+            <div
+              className="p-3 bg-transparent hover:bg-[#1E1E1E] flex rounded-lg w-[200px] hover:cursor-pointer"
               onClick={() => router.push("./Vaults")}
             >
               <PiVaultLight className="text-white text-[20px]" />
@@ -51,7 +66,7 @@ export default function Vaults() {
 
             <div
               className="p-3 bg-transparent hover:bg-[#1E1E1E] flex rounded-lg w-[200px] hover:cursor-pointer"
-              onClick={() => router.push("./About")}
+              onClick={() => router.push("http://arcusbtc.com")}
             >
               <FcAbout className="text-white text-[20px]" />
               <span className="text-white font-Exo2 text-[14px] ml-3">

@@ -1,3 +1,5 @@
+// Bottom Footer
+
 export default function Footer () {
     return (
         <div className="flex items-center w-full bg-black">

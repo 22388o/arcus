@@ -1,3 +1,5 @@
+// 'Strategies' Tab on Vault Details
+
 import { AiOutlineCopy } from "react-icons/ai";
 
 export default function Tab_Stratigies() {

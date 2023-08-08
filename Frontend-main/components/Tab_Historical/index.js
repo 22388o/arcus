@@ -1,3 +1,5 @@
+//  Historical Graphs Tab on Vault Details including TVL and Earnings History
+
 import LineChartM from "../LineChartM";
 
 export default function Tab_Historical() {

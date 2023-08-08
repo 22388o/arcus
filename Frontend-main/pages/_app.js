@@ -1,10 +1,14 @@
 import '@/styles/globals.css'
 import { Connect } from "@stacks/connect-react"
+import { store } from '@/store';
+import { Provider } from 'react-redux'
 
 export default function App({ Component, pageProps }) {
   return (
-    <Connect>
-      <Component {...pageProps} />
-    </Connect>
+    <Provider store={store}>
+      <Connect>
+        <Component {...pageProps} />
+      </Connect>
+      </Provider>
   )
 }
