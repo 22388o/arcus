@@ -3,20 +3,20 @@ import { userSession } from "../utils/stacks";
 
 export default function useHiro() {
     const [address, setAddress] = useState('');
-    let tempAddress;
-    try{    
-        tempAddress = userSession.loadUserData().profile?.stxAddress?.testnet;
-    } catch(e) {console.error(e)}
-
-    console.log(tempAddress);
 
     useEffect(() => {
-        try{
-            setAddress(tempAddress);
-        }catch(e) {
-            setAddress('');
-        }
-    }, [tempAddress])
+        const fetchAddress = async () => {
+            try {
+                const tempAddress = await userSession.loadUserData().profile?.stxAddress?.testnet;
+                setAddress(tempAddress || '');
+            } catch (e) {
+                console.error(e);
+                setAddress('');
+            }
+        };
+
+        fetchAddress();
+    }, []);
 
     return address;
 }

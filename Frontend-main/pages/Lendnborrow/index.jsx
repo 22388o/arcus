@@ -48,7 +48,7 @@ export default function LendnBorrow() {
               </span>
             </div>
 
-            <div
+            {/* <div
               className="p-3 bg-transparent hover:bg-[#1E1E1E] flex rounded-lg w-[200px] hover:cursor-pointer"
               onClick={() => router.push("./Lendnborrow")}
             >
@@ -56,7 +56,7 @@ export default function LendnBorrow() {
               <span className="text-white font-Exo2 text-[14px] ml-3">
                 Lend N' Borrow
               </span>
-            </div>
+            </div> */}
 
             <div
               className="p-3 bg-transparent hover:bg-[#1E1E1E] flex rounded-lg w-[200px] hover:cursor-pointer"
@@ -93,6 +93,7 @@ export default function LendnBorrow() {
                     BTC
                   </span>
                 </span>
+                
                 <span className="text-white font-exo2 text-[14px] text-center">
                   {accountSTX / 1000000} STX
                 </span>

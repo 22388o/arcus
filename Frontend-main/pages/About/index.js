@@ -11,6 +11,11 @@ import AddToVault from "@/components/AddToVault";
 export default function About() {
   const router = useRouter();
   const [status, setStatus] = useState(1);
+
+  const imageClickHandle = () => {
+    router.push("../");
+  };
+  
   return (
     <div className="bg-black w-full h-screen flex flex-col">
       <Header />
@@ -18,6 +23,14 @@ export default function About() {
       <div className="flex flex-col h-full">
         <div className="flex h-full">
           <div className="flex flex-col w-[220px] pt-6 pl-3">
+          <Image
+              src="/Arcus_Logo_v2.png"
+              width={150}
+              height={50}
+              alt="Arcus Logo"
+              onClick={imageClickHandle}
+              className="hover:cursor-pointer pb-4"
+            />
             <div
               className="p-3 bg-transparent hover:bg-[#1E1E1E] flex rounded-lg w-[200px] hover:cursor-pointer"
               onClick={() => router.push("./")}
@@ -27,7 +40,7 @@ export default function About() {
                 Home
               </span>
             </div>
-
+{/* 
             <div
               className="p-3 bg-transparent hover:bg-[#1E1E1E] flex rounded-lg w-[200px] hover:cursor-pointer"
               onClick={() => router.push("./Lendnborrow")}
@@ -36,7 +49,7 @@ export default function About() {
               <span className="text-white font-Exo2 text-[14px] ml-3">
                 Lend N' Borrow
               </span>
-            </div>
+            </div> */}
 
             <div
               className="p-3 bg-transparent hover:bg-[#1E1E1E] flex rounded-lg w-[200px] hover:cursor-pointer"

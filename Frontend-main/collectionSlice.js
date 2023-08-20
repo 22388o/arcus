@@ -1,19 +1,23 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = {
-  stxAddress_testnet:'',
-}
+// const initialState = {
+//   stxAddress_testnet:'',
+// }
 
 export const collectionSlice = createSlice({
-    name: 'acrusInfo',
-    initialState,
-    reducers: {
-      setStxAddress_testnet: (state, action) => {
-        state.stxAddress_testnet = action.payload;
-      },
+  name: "arcusInfo",
+  initialState: {
+    stxAddressTestnet: null,
+  },
+  reducers: {
+    setStxAddressTestnet: (state, action) => {
+      state.stxAddressTestnet = action.payload;
     },
-  })
+  },
+});
 
 export const { setStxAddress_testnet } = collectionSlice.actions
+
+export const selectStxAddressTestnet = (state) => state.collection.stxAddressTestnet;
 
 export default collectionSlice.reducer

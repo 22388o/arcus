@@ -14,6 +14,15 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
+    .text-xs {
+      font-size: 12px;
+    }
+    
+    .px-6 {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  
 }
 
 body {
@@ -24,4 +33,18 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+button.Connect:hover,
+button.Vote:hover {
+  filter: brightness(1.1);
+}
+
+button.Connect {
+  margin: 8px;
+  background-color: #BE936B;
+  border: 2px solid #BE936B;
+  border-radius: 28px;
+  font-size: 18px;
+  padding: 12px 18px;
 }

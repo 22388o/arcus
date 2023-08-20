@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { PiVaultLight } from "react-icons/pi";
 import { BsCoin } from "react-icons/bs";
 import { RiWaterPercentFill } from "react-icons/ri";
@@ -8,9 +9,31 @@ import { RiMoneyDollarCircleLine } from "react-icons/ri";
 import { BsArrowDownCircleFill } from "react-icons/bs";
 import { BsArrowUpCircleFill } from "react-icons/bs";
 import { useRouter } from "next/router";
+import DepositModal from "@/components/DepositModal";
+import WithdrawModal from "@/components/WithdrawModal";
 
 export default function TransactionTable() {
   const router = useRouter();
+
+  const [isDepositModal, setDepositModal] = useState(false);
+  const [isWithdrawModal, setWithdrawModal] = useState(false);
+
+  const handleOpenDeposit = () => {
+    setDepositModal(true);
+  };
+
+  const handleCloseDeposit = () => {
+    setDepositModal(false);
+  };
+
+  const handleOpenWithdraw = () => {
+    setWithdrawModal(true);
+  };
+
+  const handleCloseWithdraw = () => {
+    setWithdrawModal(false);
+  };
+
   return (
     <div className="flex flex-col mt-3">
       <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -123,13 +146,19 @@ export default function TransactionTable() {
                   </td>
                   <td className="px-2 py-4">
                     <div className="flex flex-col">
-                      <button className="text-[15px] bg-[#42EACA] rounded-full font-bold px-2 flex items-center">
+                      <button
+                        className="text-[15px] py-1 bg-gradient-to-r from-[#BE936B] to-[#C6A26A] rounded-full font-bold px-2 flex items-center justify-center transition-all duration-300 hover:cursor-pointer hover:bg-gradient-to-r hover:from-[#D8B98C] hover:to-[#C6A26A]"
+                        onClick={handleOpenDeposit}
+                      >
                         <BsArrowUpCircleFill className="text-[15px] mr-1" />
-                        Deposit
+                        <span>Deposit</span>
                       </button>
-                      <button className="text-[15px] bg-[#F0B90B] rounded-full font-bold mt-2 px-2 flex items-center">
+                      <button
+                        className="text-[15px] py-1 bg-gradient-to-r from-[#E0E0E0] to-[#FFCCCB] rounded-full font-bold px-2 flex items-center justify-center transition-all duration-300 hover:cursor-pointer hover:bg-gradient-to-r hover:from-[#FFCCCB] hover:to-[#FFCCCB]"
+                        onClick={handleOpenWithdraw}
+                      >
                         <BsArrowDownCircleFill className="text-[15px] mr-1" />
-                        Withdraw
+                        <span>Withdraw</span>
                       </button>
                     </div>
                   </td>
@@ -181,13 +210,19 @@ export default function TransactionTable() {
                   </td>
                   <td className="px-2 py-4">
                     <div className="flex flex-col">
-                      <button className="text-[15px] bg-[#42EACA] rounded-full font-bold px-2 flex items-center">
+                      <button
+                        className="text-[15px] py-1 bg-gradient-to-r from-[#BE936B] to-[#C6A26A] rounded-full font-bold px-2 flex items-center justify-center transition-all duration-300 hover:cursor-pointer hover:bg-gradient-to-r hover:from-[#D8B98C] hover:to-[#C6A26A]"
+                        onClick={handleOpenDeposit}
+                      >
                         <BsArrowUpCircleFill className="text-[15px] mr-1" />
-                        Deposit
+                        <span>Deposit</span>
                       </button>
-                      <button className="text-[15px] bg-[#F0B90B] rounded-full font-bold mt-2 px-2 flex items-center">
+                      <button
+                        className="text-[15px] py-1 bg-gradient-to-r from-[#E0E0E0] to-[#FFCCCB] rounded-full font-bold px-2 flex items-center justify-center transition-all duration-300 hover:cursor-pointer hover:bg-gradient-to-r hover:from-[#FFCCCB] hover:to-[#FFCCCB]"
+                        onClick={handleOpenWithdraw}
+                      >
                         <BsArrowDownCircleFill className="text-[15px] mr-1" />
-                        Withdraw
+                        <span>Withdraw</span>
                       </button>
                     </div>
                   </td>
@@ -236,19 +271,44 @@ export default function TransactionTable() {
                   </td>
                   <td className="px-2 py-4">
                     <div className="flex flex-col">
-                      <button className="text-[15px] bg-[#42EACA] rounded-full font-bold px-2 flex items-center">
+                      <button
+                        className="text-[15px] py-1 bg-gradient-to-r from-[#BE936B] to-[#C6A26A] rounded-full font-bold px-2 flex items-center justify-center transition-all duration-300 hover:cursor-pointer hover:bg-gradient-to-r hover:from-[#D8B98C] hover:to-[#C6A26A]"
+                        onClick={handleOpenDeposit}
+                      >
                         <BsArrowUpCircleFill className="text-[15px] mr-1" />
-                        Deposit
+                        <span>Deposit</span>
                       </button>
-                      <button className="text-[15px] bg-[#F0B90B] rounded-full font-bold mt-2 px-2 flex items-center">
+                      <button
+                        className="text-[15px] py-1 bg-gradient-to-r from-[#E0E0E0] to-[#FFCCCB] rounded-full font-bold px-2 flex items-center justify-center transition-all duration-300 hover:cursor-pointer hover:bg-gradient-to-r hover:from-[#FFCCCB] hover:to-[#FFCCCB]"
+                        onClick={handleOpenWithdraw}
+                      >
                         <BsArrowDownCircleFill className="text-[15px] mr-1" />
-                        Withdraw
+                        <span>Withdraw</span>
                       </button>
                     </div>
                   </td>
                 </tr>
               </tbody>
             </table>
+          </div>
+
+          <div className="flex w-full justify-center mt-6 md:mt-12">
+            <div className="flex flex-col space-y-3 md:space-y-0 md:flex-row md:space-x-[15px]">
+              {isDepositModal && (
+                <DepositModal
+                  isOpen={isDepositModal}
+                  onClose={handleCloseDeposit}
+                  vaultName={"BTC Vault - Deposit"}
+                ></DepositModal>
+              )}
+              {isWithdrawModal && (
+                <WithdrawModal
+                  isOpen={isWithdrawModal}
+                  onClose={handleCloseWithdraw}
+                  vaultName={"BTC Vault - Withdraw"}
+                ></WithdrawModal>
+              )}
+            </div>
           </div>
         </div>
       </div>
