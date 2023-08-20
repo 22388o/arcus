@@ -15,17 +15,27 @@ export default function About() {
   const imageClickHandle = () => {
     router.push("../");
   };
-  
+
   return (
     <div className="bg-black w-full h-screen flex flex-col">
-      <Header />
+      <div className="flex justify-between items-center px-4 md:px-10 py-2">
+        <Image
+          src="/Arcus_Logo_v2.png"
+          width={150}
+          height={50}
+          alt="Arcus Logo"
+          onClick={imageClickHandle}
+          className="hover:cursor-pointer"
+        />
+        <Header />
+      </div>
       <hr className="border-t-2 border-[#2C2C2C]" />
       <div className="flex flex-col h-full">
         <div className="flex h-full">
           <div className="flex flex-col w-[220px] pt-6 pl-3">
           <Image
-              src="/Arcus_Logo_v2.png"
-              width={150}
+              src="/alogo_v2-r.png"
+              width={100}
               height={50}
               alt="Arcus Logo"
               onClick={imageClickHandle}
