@@ -1,9 +1,5 @@
-// Deposit Modal when User clicks 'Deposit' Button
-
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { runClarityFunction } from "@/utils/stacks";
-
 
 export default function DepositModal({ isOpen, onClose, vaultName }) {
   const [amount, setAmount] = useState("");
@@ -13,7 +9,7 @@ export default function DepositModal({ isOpen, onClose, vaultName }) {
   }
 
   return (
-    <div className="fixed z-10 inset-0 overflow-y-auto">
+    <div className="fixed z-10 inset-0 overflow-y-auto bg-black bg-opacity-75">
       <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
         <div className="fixed inset-0 transition-opacity" aria-hidden="true">
           <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
@@ -27,14 +23,13 @@ export default function DepositModal({ isOpen, onClose, vaultName }) {
         >
           <div className="mt-3 text-center">
             <span
-              className=" text-gray-900 font-bold text-[30px] font-exo2"
+              className="text-gray-900 font-bold text-[30px] font-exo2"
               id="modal-headline"
             >
               {vaultName}
             </span>
           </div>
           
-          {/* <hr className='border-t-2 border-[#555555] mt-3' />  */}
           <div className="flex flex-col px-4 mt-4">
             <div className="border-2 border-gray-500 p-3 rounded-lg">
               <span className="font-bold font-exo2">Deposit</span>
@@ -91,8 +86,11 @@ export default function DepositModal({ isOpen, onClose, vaultName }) {
           <div className="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
             <button
               type="button"
-              className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:ml-3 sm:w-auto sm:text-sm"
-              onClick={() => {runClarityFunction('ST39KDG85WZ340RAGGFY4FN3JMKYMEC1AEQHRM7TN', 'arcus-vaults', 'deposit-vault-stx', amount, 0)}}
+              className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-gradient-to-r from-[#BE936B] to-[#C6A26A] text-base font-medium text-white hover:cursor-pointer hover:bg-gradient-to-r hover:from-[#D8B98C] hover:to-[#C6A26A] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:ml-3 sm:w-auto sm:text-sm"
+              onClick={() => {
+                runClarityFunction('ST39KDG85WZ340RAGGFY4FN3JMKYMEC1AEQHRM7TN', 'arcus-vaults', 'deposit-vault-stx', amount, 0);
+                onClose();
+              }}
             >
               Confirm
             </button>

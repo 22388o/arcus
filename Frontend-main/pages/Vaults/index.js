@@ -48,7 +48,7 @@ export default function Vaults() {
       <hr className="border-t-2 border-[#2C2C2C]" />
       <div className="flex flex-col flex-1">
         <div className="flex">
-          <div className="flex flex-col w-[220px] pt-6 pl-3">
+          <div className="flex flex-col w-[100px] pt-6 pl-3">
           <Image
             src="/alogo_v2-r.png"
             width={100}

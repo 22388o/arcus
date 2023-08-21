@@ -38,7 +38,9 @@ export default function TransactionTable() {
     <div className="flex flex-col mt-3">
       <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+          
           <div className="overflow-hidden sm:rounded-lg">
+            
             <table className="min-w-full divide-y divide-[#2C2C2C]">
               <thead className="bg-transparent">
                 <tr>

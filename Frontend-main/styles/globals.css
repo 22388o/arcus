@@ -8,43 +8,74 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgb(var(--background-end-rgb))
+  ) rgb(var(--background-start-rgb));
+    margin: 0;
+    padding: 0;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.button-base {
+  margin: 8px;
+  border-radius: 28px;
+  font-size: 18px;
+  padding: 12px 18px;
+  transition: filter 0.3s;
+}
+
+.button-connect {
+  background-color: #BE936B;
+  border: 2px solid #BE936B;
+}
+
+.button-vote {
+  background-color: #YOUR_OTHER_COLOR;
+  border: 2px solid #YOUR_OTHER_COLOR;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* Decrease font size for better readability on smaller screens */
+  }
+  
+  .text-xs {
+    font-size: 12px;
+  }
+
+  .px-6 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .button-base {
+    margin: 4px; /* Adjust margin for smaller screens */
+    font-size: 16px; /* Reduce font size */
+    padding: 8px 14px; /* Adjust padding for smaller buttons */
+  }
+  
+  .button-connect,
+  .button-vote {
+    font-size: 14px; /* Adjust font size for buttons */
+    padding: 8px 12px; /* Adjust padding for buttons */
+  }
+  
+  /* Add more mobile-specific adjustments as needed */
+}
+
+/* Dark mode styles */
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-    .text-xs {
-      font-size: 12px;
-    }
-    
-    .px-6 {
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-  
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-button.Connect:hover,
-button.Vote:hover {
-  filter: brightness(1.1);
-}
-
-button.Connect {
-  margin: 8px;
-  background-color: #BE936B;
-  border: 2px solid #BE936B;
-  border-radius: 28px;
-  font-size: 18px;
-  padding: 12px 18px;
+  .button-base:hover {
+    filter: brightness(1.1);
+  }
 }

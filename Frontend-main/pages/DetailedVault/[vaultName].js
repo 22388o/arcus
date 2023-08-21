@@ -46,6 +46,7 @@ export default function DetailedVault() {
         />
         <Header />
       </div>
+      
       <hr className="border-t-2 border-[#2C2C2C]" />
       <div className="w-full h-full bg-black items flex flex-col px-[15px] md:px-[30px] py-5 md:py-10">
         <span className="text-white font-exo2 text-[30px] md:text-[60px] font-bold text-center tracking-widest">

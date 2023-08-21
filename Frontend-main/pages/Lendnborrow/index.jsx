@@ -33,7 +33,7 @@ export default function LendnBorrow() {
 
   return (
     <div className="bg-black w-full h-screen flex flex-col">
-      <Header />
+      {/* <Header /> */}
       <hr className="border-t-2 border-[#2C2C2C]" />
       <div className="flex flex-col h-full">
         <div className="flex h-full">

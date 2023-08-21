@@ -16,9 +16,9 @@ export default function Tab_Stratigies() {
           <AiOutlineCopy className="ml-3 text-[#C2C2C2] text-[18px] mt-2" />
         </div>
         <div className="w-full font-exo2 text-[#B4B4B4] text-[18px] mt-5 tracking-wider">
-          Enabling the ALEX DeFi liquidty pool and yield farming apy into our
+          Enabling the ALEX DeFi liquidty pool and yield farming APY into our
           vault.
-          <br /> Automated Yield based on the highest yield suffered by the ALEX
+          <br /> Automated Yield based on the highest yield offered by the ALEX
           BTC DeFi protocol.
         </div>
       </div>
