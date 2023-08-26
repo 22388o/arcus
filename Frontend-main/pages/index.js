@@ -43,6 +43,8 @@ export default function Home() {
 
   return (
     <div className="bg-black w-full h-screen flex flex-col">
+      {/* Connect Wallet / Header */}
+
       <div className="flex justify-between items-center px-4 md:px-10 py-2">
         <Image
           src="/Arcus_Logo_v2.png"
@@ -55,6 +57,8 @@ export default function Home() {
 
         <Header />
       </div>
+
+      {/* Sidebar */}
 
       <hr className="border-t-2 border-[#2C2C2C]" />
       <div className="flex flex-col h-full">
@@ -99,6 +103,9 @@ export default function Home() {
               </span>
             </div>
           </div>
+
+          {/* Main Content */}
+
           <div className="w-[2px] h-full"></div>
           <div className="flex flex-col w-full h-full items-center justify-center">
             <span className="font-exo2 mt-10 text-white text-[64px] font-bold text-center text-yellow-100">
@@ -120,6 +127,8 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Invest Now Deposit Modal */}
+
       <div className="flex w-full justify-center mt-6 md:mt-12">
         <div className="flex flex-col space-y-3 md:space-y-0 md:flex-row md:space-x-[15px]">
           {isDepositModal && (
@@ -138,6 +147,9 @@ export default function Home() {
           )}
         </div>
       </div>
+
+
+      {/* Footer */}
 
       <hr className="border-t-2 border-[#2C2C2C]" />
       <div className="flex mt-auto">

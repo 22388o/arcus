@@ -104,16 +104,18 @@ export default function Vaults() {
             <div className="p-[10px] mt-[50px] bg-[#1E1E1E] rounded-lg w-full md:w-[80%] mx-auto space-y-4 md:space-y-0 md:flex md:justify-between md:px-[150px]">
                 <div className="flex flex-col w-fix h-full items-center justify-center">
                     <span className="text-white font-exo2 text-[20px] text-center">Total Available</span>
-                    <span className="text-[#B2B2B2] font-exo2 text-[20px] font-bold text-center">{accountSTX / 1000000} STX</span>
+                    <span className="text-[#B2B2B2] font-exo2 text-[20px] font-bold text-center">
+                      {/* {accountSTX / 1000000}  */}
+                    BTC</span>
                 </div>
                 <div className="flex flex-col w-fix h-full items-center justify-center">
                     <span className="text-white font-exo2 text-[20px] text-center">Total Deposited</span>
-                    <span className="text-[#B2B2B2] font-exo2 text-[20px] font-bold text-center">0 STX</span>
+                    <span className="text-[#B2B2B2] font-exo2 text-[20px] font-bold text-center">0 BTC</span>
                 </div>
                 <div className="flex flex-col w-fix h-full items-center justify-center">
                     <span className="text-white font-exo2 text-[20px] text-center">Total Pending Earnings</span>
-                    <span className="text-[#B2B2B2] font-exo2 text-[20px] font-bold text-center">0 STX</span>
-                    <span className="text-white font-exo2 text-[14px] text-center">0 BTC</span>
+                    <span className="text-[#B2B2B2] font-exo2 text-[20px] font-bold text-center">0 BTC</span>
+                    <span className="text-white font-exo2 text-[14px] text-center">0 ABR</span>
                 </div>
             </div>
             

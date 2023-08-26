@@ -165,7 +165,8 @@ export default function TransactionTable() {
                     </div>
                   </td>
                 </tr>
-                <tr>
+
+                {/* <tr>
                   <td className="px-4 py-2">
                     <div
                       className="flex items-center justify hover:bg-[#111111] hover:cursor-pointer px-2 py-2 rounded-lg"
@@ -228,7 +229,8 @@ export default function TransactionTable() {
                       </button>
                     </div>
                   </td>
-                </tr>
+                </tr> */}
+{/*                 
                 <tr>
                   <td className="px-4 py-2">
                     <div
@@ -289,11 +291,18 @@ export default function TransactionTable() {
                       </button>
                     </div>
                   </td>
-                </tr>
+                </tr> */}
+                <tr>
+                <td className="px-4 py-2">
+                      <div className="text-[15px] text-[#C6A26A] ml-2">
+                        {" "}
+                        More Coming Soon...
+                      </div>
+                  </td>
+                  </tr>
               </tbody>
             </table>
           </div>
-
           <div className="flex w-full justify-center mt-6 md:mt-12">
             <div className="flex flex-col space-y-3 md:space-y-0 md:flex-row md:space-x-[15px]">
               {isDepositModal && (

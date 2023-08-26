@@ -95,7 +95,8 @@ export default function LendnBorrow() {
                 </span>
                 
                 <span className="text-white font-exo2 text-[14px] text-center">
-                  {accountSTX / 1000000} STX
+                  {/* {accountSTX / 1000000}  */}
+                  BTC
                 </span>
               </div>
 
@@ -137,7 +138,7 @@ export default function LendnBorrow() {
                   </span>
                 </span>
                   <span className="text-white font-exo2 text-[14px] text-center">
-                    0 STX
+                    0 BTC
                   </span>
                 </div>
                 <div className="flex flex-col w-fix h-full items-center justify-center">
@@ -151,7 +152,7 @@ export default function LendnBorrow() {
                   </span>
                 </span>
                   <span className="text-white font-exo2 text-[14px] text-center">
-                    0 STX
+                    0 BTC
                   </span>
                 </div>
               </div>
