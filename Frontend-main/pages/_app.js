@@ -2,7 +2,6 @@ import '@/styles/globals.css'
 import { Connect } from "@stacks/connect-react"
 import { store } from '@/store';
 import { Provider } from 'react-redux'
-import Sidebar from '@/components/Sidebar'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
