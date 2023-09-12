@@ -3,7 +3,9 @@ import Header from "@/components/Header";
 import Image from "next/image";
 import { AiOutlineHome } from "react-icons/ai";
 import { PiVaultLight } from "react-icons/pi";
-import { FcAbout } from "react-icons/fc";
+import { PiBookOpenTextLight } from "react-icons/pi";
+import { LuLayoutDashboard } from "react-icons/lu";
+import { PiBridgeDuotone } from "react-icons/pi";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
@@ -35,10 +37,10 @@ const assetsToBorrowData = [
 
 const YourDetails = () => {
   return (
-    <div className="p-4 rounded-xl text-center shadow-lg">
-      <h2 className="text-2xl font-bold text-[#BE936B] py-10">Asset Manager</h2>
+    <div className="py-12 rounded-xl text-center shadow-lg">
+      <h2 className="text-2xl font-bold text-[#BE936B]">Asset Manager</h2>
 
-      <div className="flex flex-wrap justify-center">
+      <div className="flex flex-wrap justify-center py-10">
         <div className=" rounded-xl overflow-hidden shadow-lg bg-gray-900 pt-4 pb-6 w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 mx-2 my-2">
           <div className="font-semiold text-xl text-[#BE936B]">
             <p>
@@ -260,7 +262,7 @@ const Sidebar = () => {
               className="p-3 bg-transparent hover:bg-[#1E1E1E] flex rounded-lg w-[200px] hover:cursor-pointer"
               onClick={() => router.push("./dashboard")}
             >
-              <PiVaultLight className="text-white text-[20px]" />
+              <LuLayoutDashboard className="text-white text-[20px]" />
               <span className="text-white font-Exo2 text-[14px] ml-3">
                 Dashboard
               </span>
@@ -268,9 +270,19 @@ const Sidebar = () => {
 
             <div
               className="p-3 bg-transparent hover:bg-[#1E1E1E] flex rounded-lg w-[200px] hover:cursor-pointer"
+              onClick={() => router.push("./")}
+            >
+              <PiBridgeDuotone className="text-white text-[20px]" />
+              <span className="text-gray-400 font-Exo2 text-[14px] ml-3">
+                ZK Bridge
+              </span>
+            </div>
+
+            <div
+              className="p-3 bg-transparent hover:bg-[#1E1E1E] flex rounded-lg w-[200px] hover:cursor-pointer"
               onClick={() => router.push("http://arcusbtc.com")}
             >
-              <FcAbout className="text-white text-[20px]" />
+              <PiBookOpenTextLight className="text-white text-[20px]" />
               <span className="text-white font-Exo2 text-[14px] ml-3">
                 About
               </span>

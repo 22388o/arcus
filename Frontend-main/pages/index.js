@@ -1,10 +1,11 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { AiOutlineHome } from "react-icons/ai";
-import { PiVaultLight } from "react-icons/pi";
-import { FcAbout } from "react-icons/fc";
+import { PiBridgeDuotone } from "react-icons/pi";
+import { LuLayoutDashboard } from "react-icons/lu";
 import { BsArrowDownCircleFill } from "react-icons/bs";
 import { BsArrowUpCircleFill } from "react-icons/bs";
+import { PiBookOpenTextLight } from "react-icons/pi";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react"; // Import useEffect
 import Image from "next/image";
@@ -58,6 +59,8 @@ export default function Home() {
         <Header />
       </div>
 
+      
+
       {/* Sidebar */}
 
       <hr className="border-t-2 border-[#2C2C2C]" />
@@ -87,7 +90,7 @@ export default function Home() {
               className="p-3 bg-transparent hover:bg-[#1E1E1E] flex rounded-lg w-[200px] hover:cursor-pointer"
               onClick={() => router.push("./dashboard")}
             >
-              <PiVaultLight className="text-white text-[20px]" />
+              <LuLayoutDashboard className="text-white text-[20px]" />
               <span className="text-white font-Exo2 text-[14px] ml-3">
                 Dashboard
               </span>
@@ -95,18 +98,28 @@ export default function Home() {
 
             <div
               className="p-3 bg-transparent hover:bg-[#1E1E1E] flex rounded-lg w-[200px] hover:cursor-pointer"
+              onClick={() => router.push("./")}
+            >
+              <PiBridgeDuotone className="text-white text-[20px]" />
+              <span className="text-gray-400 font-Exo2 text-[14px] ml-3">
+                ZK Bridge
+              </span>
+            </div>
+
+            <div
+              className="p-3 bg-transparent hover:bg-[#1E1E1E] flex rounded-lg w-[200px] hover:cursor-pointer"
               onClick={() => router.push("http://arcusbtc.com")}
             >
-              <FcAbout className="text-white text-[20px]" />
+              <PiBookOpenTextLight className="text-white text-[20px]" />
               <span className="text-white font-Exo2 text-[14px] ml-3">
                 About
               </span>
             </div>
           </div>
+        </div>
+      </div>
 
           {/* Main Content */}
-
-          <div className="w-[2px] h-full"></div>
           <div className="flex flex-col w-full h-full items-center justify-center">
             <div className="font-exo2 mt-10 text-white text-[64px] font-bold text-center text-yellow-100">
               Skip the wrap...
@@ -138,9 +151,8 @@ export default function Home() {
 
             </div>
           </div>
-        </div>
-      </div>
-
+       
+    
       {/* Invest Now Deposit Modal */}
 
       <div className="flex w-full justify-center mt-6 md:mt-12">
