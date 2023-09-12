@@ -66,18 +66,7 @@ export default function Vaults() {
                 Home
               </span>
             </div>
-
-            {/* <div
-              className="p-3 bg-transparent hover:bg-[#1E1E1E] flex rounded-lg w-[200px] hover:cursor-pointer"
-              onClick={() => router.push("./Lendnborrow")}
-            >
-              <PiVaultLight className="text-white text-[20px]" />
-              <span className="text-white font-Exo2 text-[14px] ml-3">
-                Lend N' Borrow
-              </span>
-            </div> */}
             
-
             <div
               className="p-3 bg-transparent hover:bg-[#1E1E1E] flex rounded-lg w-[200px] hover:cursor-pointer"
               onClick={() => router.push("./Vaults")}
