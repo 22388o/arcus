@@ -85,11 +85,11 @@ export default function Home() {
 
             <div
               className="p-3 bg-transparent hover:bg-[#1E1E1E] flex rounded-lg w-[200px] hover:cursor-pointer"
-              onClick={() => router.push("./Vaults")}
+              onClick={() => router.push("./dashboard")}
             >
               <PiVaultLight className="text-white text-[20px]" />
               <span className="text-white font-Exo2 text-[14px] ml-3">
-                Vaults
+                Dashboard
               </span>
             </div>
 
@@ -108,20 +108,34 @@ export default function Home() {
 
           <div className="w-[2px] h-full"></div>
           <div className="flex flex-col w-full h-full items-center justify-center">
-            <span className="font-exo2 mt-10 text-white text-[64px] font-bold text-center text-yellow-100">
-              Skip the wrap, stake native BTC.
-            </span>
+            <div className="font-exo2 mt-10 text-white text-[64px] font-bold text-center text-yellow-100">
+              Skip the wrap...
+            </div>
+            <div className="font-exo2 mt-10 text-white text-[64px] font-bold text-center text-yellow-100">
+              Lend and Borrow native BTC.
+            </div>
             <br />
             <br />
 
-            <div className="flex items-center justify-center mt-5">
-              <button
+            <div className="flex items-center justify-center">
+            <button
+                className="text-[16px] md:text-[20px] py-5 px-8 bg-gradient-to-r from-[#BE936B] to-[#C6A26A] rounded-xl font-bold px-6 flex items-center transition-all duration-300 hover:cursor-pointer hover:bg-gradient-to-r hover:from-[#D8B98C] hover:to-[#C6A26A]"
+                onClick={() => router.push("./dashboard")}
+              >
+                <BsArrowUpCircleFill className="text-[15px] mr-1" />
+                Explore
+              </button>
+              {/* <button
                 className="text-[16px] md:text-[20px] py-5 bg-gradient-to-r from-[#BE936B] to-[#C6A26A] rounded-xl font-bold px-6 flex items-center transition-all duration-300 hover:cursor-pointer hover:bg-gradient-to-r hover:from-[#D8B98C] hover:to-[#C6A26A]"
                 onClick={handleOpenDeposit}
               >
                 <BsArrowUpCircleFill className="text-[15px] mr-1" />
                 Invest Now
               </button>
+
+              <div className="px-10" /> */}
+              
+
             </div>
           </div>
         </div>

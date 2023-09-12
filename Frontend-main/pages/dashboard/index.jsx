@@ -33,221 +33,69 @@ const assetsToBorrowData = [
   { asset: "zkUSD", balance: 0, apy: 1.74 },
 ];
 
-const YourSupply = ({ onSwitch, onWithdraw }) => {
+const YourDetails = () => {
   return (
-    <div className="rounded overflow-hidden shadow-lg bg-gray-custom pt-4 pb-6 md:w-1/2 lg:w-5/12 mx-auto">
-      <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2">Your supplies</div>
-      </div>
-      <div className="px-6 py-4 flex flex-col">
-        <p className="text-base text-white">Balance 0.5152</p>
-        <p className="text-base text-white">APY 4.2%</p>
-        <p className="text-base text-white">Collateral 0.162</p>
-      </div>
-      <div className="px-6 py-4">
-        <table className="w-full text-sm text-left">
-          <thead className="text-xs text-white uppercase">
-            <tr>
-              <th scope="col" className="px-6 py-3">
-                Asset
-              </th>
-              <th scope="col" className="px-6 py-3">
-                WALLET BALANCE
-              </th>
-              <th scope="col" className="px-6 py-3">
-                APY
-              </th>
-              <th scope="col" className="px-6 py-3">
-                Action
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {assetsSupplied.map((item) => (
-              <tr className="border-b" key={item.asset}>
-                <td className="px-6 py-4">{item.asset}</td>
-                <td className="px-6 py-4">{item.balance}</td>
-                <td className="px-6 py-4">{item.apy}%</td>
-                <td className="px-6 py-4">
-                  <button
-                    onClick={() => onWithdraw()}
-                    className="ml-2 bg-transparent hover:bg-white-500 text-white-700 font-semibold hover:text-white py-2 px-4 border border-white-500 hover:border-transparent rounded"
-                  >
-                    Withdraw
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
-};
+    <div className="p-4 rounded-xl text-center shadow-lg">
+      <h2 className="text-2xl font-bold text-[#BE936B] py-10">Asset Manager</h2>
 
-const YourBorrow = ({ onRepay, onBorrow }) => {
-  return (
-    <div className="rounded overflow-hidden shadow-lg bg-gray-custom pt-4 pb-6 md:w-1/2 lg:w-6/12 mx-auto">
-      <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2">Your Borrow</div>
-      </div>
-      <div className="px-6 py-4 flex flex-col">
-        <p className="text-base text-white">Balance 0.0826</p>
-        <p className="text-base text-white">APY 8.4%</p>
-        <p className="text-base text-white">Borrow power used 74.8%</p>
-      </div>
-      <div className="px-6 py-4">
-        <table className="w-full text-sm text-left">
-          <thead className="text-xs text-white uppercase">
-            <tr>
-              <th scope="col" className="px-6 py-3">
-                Asset
-              </th>
-              <th scope="col" className="px-6 py-3">
-                WALLET BALANCE
-              </th>
-              <th scope="col" className="px-6 py-3">
-                APY
-              </th>
-              <th scope="col" className="px-6 py-3">
-                Actions
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {assetsBorrowed.map((item) => (
-              <tr className="border-b" key={item.asset}>
-                <td className="px-6 py-4">{item.asset}</td>
-                <td className="px-6 py-4">{item.balance}</td>
-                <td className="px-6 py-4">{item.apy}%</td>
-                <td className="px-6 py-4">
-                  <button
-                    onClick={() => onBorrow()}
-                    className="ml-2 bg-gold hover:bg-gold text-white font-bold py-2 px-4 rounded"
-                  >
-                    Borrow
-                  </button>
-                  <button
-                    onClick={() => onRepay()}
-                    className="ml-2 bg-transparent hover:bg-white-500 text-white-700 font-semibold hover:text-white py-2 px-4 border border-white-500 hover:border-transparent rounded"
-                  >
-                    Repay
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
-};
+      <div className="flex flex-wrap justify-center">
+        <div className=" rounded-xl overflow-hidden shadow-lg bg-gray-900 pt-4 pb-6 w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 mx-2 my-2">
+          <div className="font-semiold text-xl text-[#BE936B]">
+            <p>
+              Total Available
+              <span className="pl-10 font-bold text-xl text-gray-200">
+                0.5152 BTC
+              </span>
+            </p>
+          </div>
+        </div>
 
-const AssetsToSupply = ({ onSupply, onDetails }) => {
-  return (
-    <div className="rounded overflow-hidden shadow-lg bg-gray-custom pt-4 pb-6 md:w-1/2 lg:w-5/12 mx-auto">
-      <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2">Assets To Supply</div>
-      </div>
-      <div className="px-6 py-4">
-        <table className="w-full text-sm text-left">
-          <thead className="text-xs text-white uppercase">
-            <tr>
-              <th scope="col" className="px-6 py-3">
-                Asset
-              </th>
-              <th scope="col" className="px-6 py-3">
-                WALLET BALANCE
-              </th>
-              <th scope="col" className="px-6 py-3">
-                APY
-              </th>
-              <th scope="col" className="px-6 py-3">
-                Actions
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {assetsToSupplyData.map((item) => (
-              <tr className="border-b" key={item.asset}>
-                <td className="px-6 py-4">{item.asset}</td>
-                <td className="px-6 py-4">{item.balance}</td>
-                <td className="px-6 py-4">{item.apy}%</td>
-                <td className="px-6 py-4">
-                  <button
-                    onClick={() => onSupply()}
-                    className="ml-2 bg-gold hover:bg-gold text-white font-bold py-2 px-4 rounded"
-                  >
-                    Supply
-                  </button>
-                  <button
-                    onClick={() => onDetails(item.asset)}
-                    className="ml-2 bg-transparent hover:bg-white-500 text-white-700 font-semibold hover:text-white py-2 px-4 border border-white-500 hover:border-transparent rounded"
-                  >
-                    Details
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
-};
+        <div className=" rounded-xl overflow-hidden shadow-lg bg-gray-900 pt-4 pb-6 w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 mx-2 my-2">
+          <div className="font-semiold text-xl text-[#BE936B]">
+            <p>
+              Total Deposited{" "}
+              <span className="pl-10 font-bold text-xl text-gray-200">
+                1.39 BTC
+              </span>
+            </p>
+          </div>
+        </div>
 
-const AssetsToBorrow = ({ onDetails }) => {
-  return (
-    <div className="rounded overflow-hidden shadow-lg bg-gray-custom pt-4 pb-6 md:w-1/2 lg:w-6/12 mx-auto">
-      <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2">Assets To Borrow</div>
-      </div>
-      <div className="px-6 py-4">
-        <table className="w-full text-sm text-left">
-          <thead className="text-xs text-white uppercase">
-            <tr>
-              <th scope="col" className="px-6 py-3">
-                Asset
-              </th>
-              <th scope="col" className="px-6 py-3">
-                available
-              </th>
-              <th scope="col" className="px-6 py-3">
-                APY, variable
-              </th>
-              <th scope="col" className="px-6 py-3">
-                APY, STABLE
-              </th>
-              <th scope="col" className="px-6 py-3">
-                Actions
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {assetsToBorrowData.map((item) => (
-              <tr className="border-b" key={item.asset}>
-                <td className="px-6 py-4">{item.asset}</td>
-                <td className="px-6 py-4">{item.balance}</td>
-                <td className="px-6 py-4">{item.apy}%</td>
-                <td className="px-6 py-4">-</td>
-                <td className="px-6 py-4">
-                  <button
-                    className="ml-2 bg-transparent hover:bg-white-500 text-white-700 font-semibold hover:text-white py-2 px-4 border border-white-500 hover:border-transparent rounded cursor-not-allowed"
-                    disabled
-                  >
-                    Supply
-                  </button>
-                  <button
-                    onClick={() => onDetails(item.asset)}
-                    className="ml-2 bg-transparent hover:bg-white-500 text-white-700 font-semibold hover:text-white py-2 px-4 border border-white-500 hover:border-transparent rounded"
-                  >
-                    Details
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <div className=" rounded-xl overflow-hidden shadow-lg bg-gray-900 pt-4 pb-6 w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 mx-2 my-2">
+          <div className="font-semiold text-xl text-[#BE936B]">
+            <p>
+              Total Borrowed{" "}
+              <span className="pl-10 font-bold text-xl text-gray-200">
+                0.420 BTC
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <div className=" rounded-xl overflow-hidden shadow-lg bg-gray-900 pt-4 pb-6 w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 mx-2 my-2">
+          <div className="font-semiold text-xl text-[#BE936B]">
+            <p>
+              Health Factor{" "}
+              <span className="pl-10 font-bold text-xl text-[#90EE90]">
+                1.75
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <div className=" rounded-xl overflow-hidden shadow-lg bg-gray-900 pt-4 pb-6 w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 mx-2 my-2">
+          <div className="font-semiold text-xl text-[#BE936B]">
+            <p>
+              Pending Rewards
+              <span className="pl-5 font-bold text-xl text-gray-200">
+                311 ABR
+              </span>
+              <span className="pl-5 font-bold text-xl text-gray-200">
+                0.09 BTC
+              </span>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -291,7 +139,7 @@ const Dashboard = () => {
 
   const SidebarItem = ({ text, icon, onClick }) => (
     <div
-      className="flex items-center px-3 py-2 rounded-md text-gray-200 hover:bg-gray-700 cursor-pointer"
+      className="flex items-center px-3 py-2  rounded-xl text-gray-200 hover:bg-gray-700 cursor-pointer"
       onClick={onClick}
     >
       {icon}
@@ -300,93 +148,403 @@ const Dashboard = () => {
   );
 
   return (
-    <>
-      <div className="flex flex-col md:flex-row min-h-screen">
-        <main className="flex-grow">
-          <div className="bg-black p-4 md:px-10">
-            <div className="flex justify-between items-center">
-              <Image
-                src="/Arcus_Logo_v2.png"
-                width={150}
-                height={50}
-                alt="Arcus Logo"
-                onClick={imageClickHandle}
-                className="cursor-pointer"
-              />
-              <Header />
-            </div>
-          </div>
+    <div className="flex flex-col min-h-screen">
+      <div className="flex justify-between items-center px-4 md:px-10 py-2">
+        <Image
+          src="/Arcus_Logo_v2.png"
+          width={150}
+          height={50}
+          alt="Arcus Logo"
+          onClick={imageClickHandle}
+          className="hover:cursor-pointer"
+        />
 
-          <div className="flex-grow overflow-hidden flex">
-            <div className="flex flex-col w-60 px-3 py-6 bg-[#1E1E1E]">
-              <SidebarItem
-                text="Home"
-                icon={<AiOutlineHome />}
-                onClick={() => router.push("./")}
-              />
-              <SidebarItem
-                text="Vaults"
-                icon={<PiVaultLight />}
-                onClick={() => router.push("./Vaults")}
-              />
-              <SidebarItem
-                text="About"
-                icon={<FcAbout />}
-                onClick={() => router.push("http://arcusbtc.com")}
-              />
-            </div>
-
-            <div className="flex flex-col flex-grow overflow-auto">
-              <div className="p-4 md:px-10">
-                <div className="flex justify-between mb-4">
-                  <div className="text-xl font-bold text-white">
-                    {isLendSelected ? "Your Supplies" : "Your Borrows"}
-                  </div>
-                  <div className="space-x-2">
-                    <button
-                      onClick={toggleLendBorrow}
-                      className={`${
-                        isLendSelected
-                          ? "bg-white text-gray-800"
-                          : "bg-gray-700 text-white"
-                      } px-4 py-2 rounded-full`}
-                    >
-                      Lend
-                    </button>
-                    <button
-                      onClick={toggleLendBorrow}
-                      className={`${
-                        !isLendSelected
-                          ? "bg-white text-gray-800"
-                          : "bg-gray-700 text-white"
-                      } px-4 py-2 rounded-full`}
-                    >
-                      Borrow
-                    </button>
-                  </div>
-                </div>
-                {isLendSelected ? (
-                  <YourSupply onSwitch={onSwitch} onWithdraw={onWithdraw} />
-                ) : (
-                  <YourBorrow onRepay={onRepay} onBorrow={onBorrow} />
-                )}
-                {isLendSelected ? (
-                  <AssetsToSupply
-                    onSupply={onSupply}
-                    onDetails={(asset) => onDetails(asset)}
-                  />
-                ) : (
-                  <AssetsToBorrow onDetails={(asset) => onDetails(asset)} />
-                )}
-              </div>
-            </div>
-          </div>
-        </main>
+        <Header />
       </div>
 
+      <main className="flex-grow flex">
+        
+        <Sidebar />
+
+        <div className="flex-grow flex flex-col">
+          <YourDetails />
+
+          <div className="md:flex md:hstack justify-center items-center md:p-4">
+            <YourSupply />
+
+            <YourBorrow />
+          </div>
+
+          <div className="flex flex-row items-center justify-center py-10">
+            <button
+              className={`px-20 py-8 rounded-full text-2xl ${
+                isLendSelected
+                  ? "bg-[#BE936B] text-gray-800"
+                  : "bg-gray-700 text-white"
+              }`}
+              onClick={() => setIsLendSelected(true)}
+            >
+              Lend
+            </button>
+
+            <div className="px-10" />
+
+            <button
+              className={`px-20 py-8 rounded-full text-2xl ${
+                !isLendSelected
+                  ? "bg-[#BE936B] text-gray-800"
+                  : "bg-gray-700 text-white"
+              }`}
+              onClick={() => setIsLendSelected(false)}
+            >
+              Borrow
+            </button>
+          </div>
+
+          <div className="flex flex-row items-start justify-center flex-wrap p-4 gap-4">
+            {isLendSelected && (
+              <>
+                <AssetsToSupply />
+              </>
+            )}
+
+            {!isLendSelected && (
+              <>
+                <AssetsToBorrow />
+              </>
+            )}
+          </div>
+        </div>
+      </main>
+
       <Footer />
-    </>
+    </div>
   );
 };
 
 export default Dashboard;
+
+// Sidebar
+const Sidebar = () => {
+  const router = useRouter();
+  const imageClickHandle = () => {
+    router.push("../");
+  };
+
+  return (
+    <>
+      <hr className="border-t-2 border-[#2C2C2C]" />
+      <div className="flex flex-col h-full">
+        <div className="flex h-full">
+          <div className="flex flex-col w-[100px] pt-6 pl-3">
+            <Image
+              src="/alogo_v2-r.png"
+              width={100}
+              height={50}
+              alt="Arcus Logo"
+              onClick={imageClickHandle}
+              className="hover:cursor-pointer pb-4"
+            />
+
+            <div
+              className="p-3 bg-transparent hover:bg-[#1E1E1E] flex rounded-lg w-[200px] hover:cursor-pointer"
+              onClick={() => router.push("./")}
+            >
+              <AiOutlineHome className="text-white text-[20px]" />
+              <span className="text-white font-Exo2 text-[14px] ml-3">
+                Home
+              </span>
+            </div>
+
+            <div
+              className="p-3 bg-transparent hover:bg-[#1E1E1E] flex rounded-lg w-[200px] hover:cursor-pointer"
+              onClick={() => router.push("./dashboard")}
+            >
+              <PiVaultLight className="text-white text-[20px]" />
+              <span className="text-white font-Exo2 text-[14px] ml-3">
+                Dashboard
+              </span>
+            </div>
+
+            <div
+              className="p-3 bg-transparent hover:bg-[#1E1E1E] flex rounded-lg w-[200px] hover:cursor-pointer"
+              onClick={() => router.push("http://arcusbtc.com")}
+            >
+              <FcAbout className="text-white text-[20px]" />
+              <span className="text-white font-Exo2 text-[14px] ml-3">
+                About
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+const SidebarItem = ({ text, icon, onClick }) => (
+  <div
+    className="flex items-center px-4 py-3 text-gray-200 rounded-md cursor-pointer hover:bg-gray-700"
+    onClick={onClick}
+  >
+    {icon}
+    <span className="ml-3 text-sm font-medium">{text}</span>
+  </div>
+);
+
+const YourSupply = ({ onSwitch, onWithdraw }) => {
+  return (
+    <div className=" rounded-xl overflow-hidden shadow-lg  bg-gray-900  pt-4 pb-6 md:w-1/2 lg:w-5/12 mx-auto">
+      <div className="flex items-center px-6 py-4">
+        <div className="font-bold text-white text-2xl mb-2">Your Lending</div>
+      </div>
+
+      <div className="px-6 py-4 flex flex-row">
+        <p className="font-semiold text-xl text-[#BE936B]">
+          Balance
+          <span className="pl-3 font-bold text-xl text-gray-200">
+            0.5152 BTC
+          </span>
+        </p>
+
+        <p className="pl-5 font-semiold text-xl text-[#BE936B]">
+          APY
+          <span className="pl-3 font-bold text-xl text-gray-200">4.2%</span>
+        </p>
+
+        <p className="pl-5 font-semiold text-xl text-[#BE936B]">
+          Collateral
+          <span className="pl-3 font-bold text-xl text-gray-200">0.162 BTC</span>
+        </p>
+      </div>
+
+      <div className="px-6 py-4">
+        <div className="overflow-x-auto">
+          <table className="w-full text-lg text-left">
+            <thead className="text-xl text-white uppercase">
+              <tr>
+                <th scope="col" className="px-6 py-3">
+                  Asset
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  BALANCE
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  APY
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  Action
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {assetsSupplied.map((item) => (
+                <tr className="border-b" key={item.asset}>
+                  <td className="px-6 py-4 text-white">{item.asset}</td>
+                  <td className="px-6 py-4 text-white">{item.balance}</td>
+                  <td className="px-6 py-4 text-white">{item.apy}%</td>
+                  <td className="px-6 py-4 text-white">
+                    <button
+                      onClick={() => onWithdraw()}
+                      className="ml-2 bg-transparent hover:bg-white-500 text-white-700 font-semibold hover:text-white py-2 px-4 border border-white-500 hover:border-transparent rounded"
+                    >
+                      Withdraw
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const YourBorrow = ({ onRepay, onBorrow }) => {
+  return (
+    <div className="rounded-xl overflow-hidden shadow-lg  bg-gray-900  pt-4 pb-6 md:w-1/2 lg:w-6/12 mx-auto">
+      <div className="px-6 py-4">
+        <div className="font-bold text-white text-2xl mb-2">Your Borrowing</div>
+      </div>
+
+      <div className="px-6 py-4 flex flex-row">
+        <p className="pl-5 font-semiold text-xl text-[#BE936B]">
+          Balance
+          <span className="pl-3 font-bold text-xl text-gray-200">
+            0.5152 BTC
+          </span>
+        </p>
+
+        <p className="pl-5 font-semiold text-xl text-[#BE936B]">
+          APY
+          <span className="pl-3 font-bold text-xl text-gray-200">4.2%</span>
+        </p>
+
+        <p className="pl-5 font-semiold text-xl text-[#BE936B]">
+          Collateral
+          <span className="pl-3 font-bold text-xl text-gray-200">0.162 BTC</span>
+        </p>
+      </div>
+
+      <div className="px-6 py-4">
+        <div className="overflow-x-auto">
+          <table className="w-full text-md text-left">
+            <thead className="text-lg text-white uppercase">
+              <tr>
+                <th scope="col" className="px-6 py-3">
+                  Asset
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  Debt
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  APY
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  Actions
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {assetsBorrowed.map((item) => (
+                <tr className="border-b" key={item.asset}>
+                  <td className="px-6 py-4 text-white">{item.asset}</td>
+                  <td className="px-6 py-4 text-white">{item.balance}</td>
+                  <td className="px-6 py-4 text-white">{item.apy}%</td>
+                  <td className="px-6 py-4 text-white">
+                    <button
+                      onClick={() => onBorrow()}
+                      className="ml-2 bg-[#BE936B] font-bold py-2 px-4 rounded hover:bg-white text-black rounded"
+                    >
+                      Borrow
+                    </button>
+                    <button
+                      onClick={() => onRepay()}
+                      className="ml-2 bg-transparent hover:bg-white-500 text-white-700 font-semibold hover:text-white py-2 px-4 border border-white-500 hover:border-transparent rounded"
+                    >
+                      Repay
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const AssetsToSupply = ({ onSupply, onDetails }) => {
+  return (
+    <div className=" rounded-xl overflow-hidden shadow-lg bg-gray-custom pt-4 pb-6 md:w-1/2 lg:w-5/12 mx-auto">
+      <div className="px-6 py-4">
+        <div className="font-bold text-2xl mb-2 text-white">Assets To Lend</div>
+      </div>
+      <div className="px-6 py-4">
+        <div className="overflow-x-auto">
+          <table className="w-full text-md text-left">
+            <thead className="text-lg text-white uppercase">
+              <tr>
+                <th scope="col" className="px-6 py-3">
+                  Asset
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  BALANCE
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  APY
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  Actions
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {assetsToSupplyData.map((item) => (
+                <tr className="border-b" key={item.asset}>
+                  <td className="px-6 py-4 text-white">{item.asset}</td>
+                  <td className="px-6 py-4 text-white">{item.balance}</td>
+                  <td className="px-6 py-4 text-white">{item.apy}%</td>
+                  <td className="px-6 py-4">
+                    <button
+                      onClick={() => onSupply()}
+                      className="ml-2 bg-[#BE936B] font-bold py-2 px-4 rounded hover:bg-white text-black rounded"
+                    >
+                      Supply
+                    </button>
+                    <button
+                      onClick={() => onDetails(item.asset)}
+                      className="ml-2 bg-transparent hover:bg-white-500 text-white hover:text-white py-2 px-4 border border-white-500 hover:border-transparent rounded"
+                    >
+                      Details
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const AssetsToBorrow = ({ onDetails }) => {
+  return (
+    <div className=" rounded-xl overflow-hidden shadow-lg bg-gray-custom pt-4 pb-6 md:w-1/2 lg:w-6/12 mx-auto">
+      <div className="px-6 py-4">
+        <div className="font-bold text-2xl mb-2 text-white">
+          Assets To Borrow
+        </div>
+      </div>
+      <div className="px-6 py-4">
+        <div className="overflow-x-auto">
+          <table className="w-full text-md text-left">
+            <thead className="text-lg text-white uppercase">
+              <tr>
+                <th scope="col" className="px-6 py-3">
+                  Asset
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  available
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  APY, variable
+                </th>
+                {/* <th scope="col" className="px-6 py-3">
+                APY, STABLE
+              </th> */}
+                {/* <th scope="col" className="px-6 py-3">
+                Actions
+              </th> */}
+              </tr>
+            </thead>
+            <tbody>
+              {assetsToBorrowData.map((item) => (
+                <tr className="border-b" key={item.asset}>
+                  <td className="px-6 py-4 text-white">{item.asset}</td>
+                  <td className="px-6 py-4 text-white">{item.balance}</td>
+                  <td className="px-6 py-4 text-white">{item.apy}%</td>
+                  <td className="px-6 py-4 text-white">-</td>
+                  <td className="px-6 py-4">
+                    <button className="ml-2 bg-[#BE936B] font-bold py-2 px-4 rounded hover:bg-white text-black rounded">
+                      Borrow
+                    </button>
+                    <button
+                      onClick={() => onDetails(item.asset)}
+                      className="ml-2 bg-transparent text-white font-semibold hover:text-white py-2 px-4 border border-white-500 hover:border-transparent rounded"
+                    >
+                      Details
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  );
+};
