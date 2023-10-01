@@ -401,7 +401,7 @@ const YourSupply = ({ onSwitch, onWithdraw }) => {
                     </button>
                     <button
                       onClick={() => onWithdraw()}
-                      className="ml-2 bg-transparent hover:bg-white-500 text-white-700 font-semibold hover:text-white py-2 px-4 border border-white-500 hover:bg-white hover:text-black rounded"
+                      className="ml-2 bg-transparent text-white-700 font-semibold py-2 px-4 border border-white-500 hover:bg-white hover:text-black rounded"
                     >
                       Withdraw
                     </button>
@@ -480,7 +480,7 @@ const YourBorrow = ({ onRepay, onBorrow }) => {
                     </button>
                     <button
                       onClick={() => onRepay()}
-                      className="ml-2 bg-transparent hover:bg-white-500 text-white-700 font-semibold hover:text-white py-2 px-4 border border-white-500 hover:bg-white hover:text-black rounded"
+                      className="ml-2 bg-transparent hover:bg-white-500 text-white-700 font-semibold py-2 px-4 border border-white-500 hover:bg-white hover:text-black rounded"
                     >
                       Repay
                     </button>
@@ -521,10 +521,10 @@ const AssetsToSupply = ({ onSupply, onDetails }) => {
             <tbody>
               {assetsToSupplyData.map((item) => (
                 <tr className="border-b" key={item.asset}>
-                  <td className="px-6 py-4 text-white">{item.asset}</td>
-                  <td className="px-6 py-4 text-white">{item.balance}</td>
-                  <td className="px-6 py-4 text-white">{item.apy}%</td>
-                  <td className="px-6 py-4">
+                  <td className="px-6 py-4 text-white text-xl">{item.asset}</td>
+                  <td className="px-6 py-4 text-white text-xl">{item.balance}</td>
+                  <td className="px-6 py-4 text-white text-xl">{item.apy}%</td>
+                  <td className="px-6 py-4 text-xl">
                     <button
                       onClick={() => onSupply()}
                       className="ml-2 bg-[#BE936B] font-bold py-2 px-4 rounded hover:bg-white text-black rounded"
