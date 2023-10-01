@@ -13,7 +13,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="p-[12px] w-full bg-black">
+    <div className="p-[40px] w-full bg-black">
       <div className="flex justify-between items-center h-[80px] mx-3">
         <div className="hidden md:flex items-center pl-48">
           {!isSignedIn && <ConnectWallet />}

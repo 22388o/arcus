@@ -121,22 +121,20 @@ export default function Home() {
 
           {/* Main Content */}
           <div className="flex flex-col w-full h-full items-center justify-center">
-            <div className="font-exo2 mt-10 text-white text-[64px] font-bold text-center text-yellow-100">
-              Skip the wrap...
+          <div className="font-exo2 text-white text-[64px] font-bold text-center text-yellow-100">
+              Trustless Bitcoin Loans
             </div>
             <div className="font-exo2 mt-10 text-white text-[64px] font-bold text-center text-yellow-100">
-              Lend and Borrow native BTC.
+             World's First BRC-20 Lending Market
             </div>
-            <br />
-            <br />
 
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center py-20">
             <button
                 className="text-[16px] md:text-[20px] py-5 px-8 bg-gradient-to-r from-[#BE936B] to-[#C6A26A] rounded-xl font-bold px-6 flex items-center transition-all duration-300 hover:cursor-pointer hover:bg-gradient-to-r hover:from-[#D8B98C] hover:to-[#C6A26A]"
                 onClick={() => router.push("./dashboard")}
               >
                 <BsArrowUpCircleFill className="text-[15px] mr-1" />
-                Explore
+                {" "}Explore
               </button>
               {/* <button
                 className="text-[16px] md:text-[20px] py-5 bg-gradient-to-r from-[#BE936B] to-[#C6A26A] rounded-xl font-bold px-6 flex items-center transition-all duration-300 hover:cursor-pointer hover:bg-gradient-to-r hover:from-[#D8B98C] hover:to-[#C6A26A]"

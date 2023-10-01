@@ -33,9 +33,17 @@ body {
   border: 2px solid #BE936B;
 }
 
-.button-vote {
-  background-color: #YOUR_OTHER_COLOR;
-  border: 2px solid #YOUR_OTHER_COLOR;
+
+.collapsed {
+  width: 16px; 
+}
+
+.collapsed svg {
+  display: none;
+}
+
+.collapsed span {
+  display: none;
 }
 
 @media (max-width: 768px) {
