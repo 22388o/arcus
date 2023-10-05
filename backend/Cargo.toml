@@ -1,0 +1,26 @@
+[package]
+name = "backend"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix-web = { version = "4", features = ["rustls"] }
+bitcoin = "0.29"
+bitcoin-rpc-provider = { path = "./utils/rust-dlc-master/bitcoin-rpc-provider" }
+config = "0.13"
+dlc = {path = "./utils/rust-dlc-master/dlc", features = ["use-serde"] }
+dlcmanager = { path = "./utils/rust-dlc-master/dlc-manager", features = ["use-serde", "parallel"] }
+dlc-messages = { path = "./utils/rust-dlc-master/dlc-messages" }
+dlc-sled-storage-provider = { path = "./utils/rust-dlc-master/dlc-sled-storage-provider" }
+futures = "0.3"
+lightning = {version = "0.0.116"}
+lightning-net-tokio = {version = "0.0.116" }
+log = "0.4"
+p2pd-oracle-client = { path = "./utils/rust-dlc-master/p2pd-oracle-client" }
+serde = "1.0"
+serde_json = "1.0"
+serde_yaml = "0.9.14"
+time = "0.3.16"
+tokio = {version = "1.5", features = ["io-util", "macros", "rt", "rt-multi-thread", "sync", "net", "time"]}
